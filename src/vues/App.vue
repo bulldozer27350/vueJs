@@ -1,14 +1,19 @@
 <template>
+  <div class="ui inverted fixed menu">
+      <MyHeaderComponent />
+    </div>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
 import HelloWorld from '../components/HelloWorld.vue'
+import MyHeaderComponent from '../components/HeaderComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    MyHeaderComponent
   }
 }
 </script>
