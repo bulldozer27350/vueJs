@@ -1,40 +1,49 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
+  <div class="ui main container">
     <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+      <li v-for="item in articles" :key="item.id">
+        <div class="ui message"  v-if="item.stockNumber != 0" :class="item.category.name == 'Nourriture' ? 'error' : 'success'">
+        {{ item.id }} / <h2>{{ item.name }}</h2> 
+        <br />
+        <span style="font-style: bold; font-size: large;">{{ item.shortDescription }}</span><br />
+        <span style="font-style: italic; font-size: small;">{{ item.longDescription }}</span><br />
+        <span style="text-decoration: underline;">Categorie : {{ item.category.name }}</span> <br />
+        ( {{ item.stockNumber }} en stock ) 
+        <button @click="decrement(item)">&nbsp;-&nbsp;</button>
+        <button @click="increment(item)">&nbsp;+&nbsp;</button>
+        <br />
+        <br />
+      </div>
+    </li>
     </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      articles: [],
+    }
+  },
+  mounted() {
+      axios.get('http://localhost:9000/articles').then(response => {
+        this.articles = response.data
+      })
+  },
+  methods: {
+    decrement(article) {
+      article.stockNumber --
+    },
+    increment(article) {
+      article.stockNumber ++
+    }
   }
 }
 </script>

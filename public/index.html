@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      .main.container {
+        padding-top: 50px;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div class="ui inverted fixed menu">
+      <div class="header item">
+        Démonstration
+      </div>
+    </div>
+    <div id="app" class="ui main container"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
