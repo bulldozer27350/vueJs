@@ -1,24 +1,21 @@
 <template>
   <div class="ui inverted fixed menu">
-      <MyHeaderComponent />
-    </div>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MyHeaderComponent />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
 import MyHeaderComponent from '../components/HeaderComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     MyHeaderComponent
   }
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

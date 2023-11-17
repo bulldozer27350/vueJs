@@ -1,16 +1,20 @@
 <template>
-  <div id="header" class="header item">
-        Démonstration
-      </div>
-    Je suis le routeur
-  </template>
+  <div id="header" class="ui inverted fixed menu header item"><!-- header item -->
+    Démonstration
+  </div>
+  <div>
+		<router-link to="/">Home</router-link> |
+		<router-link to="/about">About</router-link> |
+	</div>
+	<router-view />
+</template>
   
-  <script>
+<script>
   export default {
     name: 'MyHeaderComponent'
   }
-  </script>
+</script>
   
-  <style lang="scss">
+<style lang="scss">
   
-  </style>
+</style>
