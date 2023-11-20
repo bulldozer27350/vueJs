@@ -1,18 +1,18 @@
 <template>
-    <HelloWorld msg="Welcome from About"/>
-  </template>
+    <div id="about">
+      Je suis une vue About.
+    </div>
+</template>
   
-  <script>
-   import HelloWorld from '../components/HelloWorld.vue'
-  
+<script>
   export default {
     name: 'MyAboutView',
-    components: {
-        HelloWorld
-    }
   }
-  </script>
+</script>
   
-  <style lang="scss">
-  </style>
+<style lang="scss">
+#about {
+  padding-top: 20px;
+}
+</style>
   
