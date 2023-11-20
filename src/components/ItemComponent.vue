@@ -24,7 +24,7 @@
       <img class="menu-item__image" :src="'/images/articles/' + item.name + '.jpg'" />
     </div>
     <div class="right">
-      <h2>{{ item.id }} / {{ item.name }}</h2> 
+      <center><h2><router-link :to="'edit/' + item.id">{{ item.id }} / {{ item.name }}</router-link></h2></center>
       
       <span style="font-style: bold; font-size: large;">
         {{ item.shortDescription }}

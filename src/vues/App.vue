@@ -27,4 +27,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+#contentPage {
+  vertical-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 </style>
