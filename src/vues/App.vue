@@ -1,6 +1,9 @@
 <template>
-  <div class="ui inverted fixed menu">
+  <div id="headerComponent" class="ui inverted fixed menu">
     <MyHeaderComponent />
+  </div>
+  <div id="contentPage">
+    <router-view />
   </div>
 </template>
 

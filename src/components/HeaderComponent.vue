@@ -1,12 +1,11 @@
 <template>
-  <div id="header" class="ui inverted fixed menu header item"><!-- header item -->
+  <div id="title" class="header item">
     Démonstration
   </div>
-  <div>
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link> |
+  <div id="headerLinks">
+		<span class="headerLinks__a" ><router-link to="/">Home</router-link></span>
+		<span class="headerLinks__a" ><router-link to="/about">About</router-link></span>
 	</div>
-	<router-view />
 </template>
   
 <script>
@@ -16,5 +15,20 @@
 </script>
   
 <style lang="scss">
-  
+  #headerLinks {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-size: medium;
+    color: white;
+  }
+  .headerLinks__a {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+  }
+  .headerLinks__a > a {
+    padding-left: 10px;
+    color: white;
+    border-color: whitesmoke;
+  }
 </style>
