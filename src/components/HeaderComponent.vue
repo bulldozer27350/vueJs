@@ -3,8 +3,9 @@
     Démonstration
   </div>
   <div id="headerLinks">
-		<span class="headerLinks__a" ><router-link to="../">Home</router-link></span>
-		<span class="headerLinks__a" ><router-link to="../about">About</router-link></span>
+		<span class="headerLinks__a" ><router-link to="../">Accueil</router-link></span>
+    <span class="headerLinks__a" ><router-link to="../create">Création</router-link></span>
+		<span class="headerLinks__a" ><router-link to="../about">Contact</router-link></span>
 	</div>
 </template>
   

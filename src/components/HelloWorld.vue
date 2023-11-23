@@ -3,7 +3,7 @@
     <ul>
       <li v-for="element in articles" :key="element.id">
         <ItemComponent :item="element" />
-    </li>
+      </li>
     </ul>
   </div>
 </template>

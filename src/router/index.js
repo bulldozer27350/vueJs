@@ -17,6 +17,11 @@ const routes = [
     path: '/edit/:id',
     name: 'edit',
     component: () => import('../components/ArticleEdit.vue') 
+  },
+  {
+    path: '/create/',
+    name: 'create',
+    component: () => import('../components/ArticleEdit.vue') 
   }
 ]
 
